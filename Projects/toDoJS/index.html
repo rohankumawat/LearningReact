@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+    <style>
+        .done{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="write"> <!--input field to write the task-->
+        <ul id="todo-list">
+                 
+        </ul>
+    </div>
+
+    <script>
+        let write = document.getElementById('write');
+        let todoList = document.getElementById('todo-list');
+        write.addEventListener("keydown", function(e){
+            if(e.key == "Enter"){
+                // console.log(this.value);
+                // this.value = ""; clear the input field after pressing enter
+
+                // todoList.innerHTML = this.value;
+                // this.value = ""; // clear the input field after pressing enter
+
+                addTodo(this.value); // add the task to the list
+                this.value = ""; // clear the input field after pressing enter
+            }
+        })
+        function addTodo(val){
+            let list = document.createElement("li");
+            list.innerHTML = `${val}`;
+            todoList.appendChild(list);
+            console.log(val);
+
+            list.addEventListener("click", function(){
+                // this.style.textDecoration = "line-through"; // strike through the task when clicked (can't be undone)
+                this.classList.toggle("done"); // strike through the task when clicked (can be undone)
+            }) // strike through the task when clicked
+        }
+    </script>
+</body>
