@@ -11,8 +11,12 @@ button.forEach(element => {
         else if(e.target.textContent === '<'){
             input.innerText = input.innerText.slice(0, -1); // Remove the last character
         }
+        else if(e.target.textContent === '='){
+            input.innerText = eval(input.innerText); // Evaluate the expression
+        }
         else{
             input.innerText += e.target.textContent;
         }
+        input.scrollLeft = input.scrollWidth; // Scroll to the end
     });
 });

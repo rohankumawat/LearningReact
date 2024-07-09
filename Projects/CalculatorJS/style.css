@@ -37,3 +37,11 @@ button{
     box-shadow: inset 6px 6px 10px rgba(189, 97, 97, 1),
                 inset -6px -6px 10px rgba(189, 97, 97, 1);
 }
+#input{
+    text-align: center;
+    margin: 10px;
+    font-size: 50px;
+    color: white;
+    overflow: hidden;
+    max-width: 400px;
+}
